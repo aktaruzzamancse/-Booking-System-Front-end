@@ -1,12 +1,16 @@
-import { useDispatch,useSelector } from "react-redux"
 import {increment, decrement  } from "./redux/features/counterSlice"
+import { useAppDispatch, useAppSelector } from "./redux/hooks";
+import { Button } from "@/components/ui/button"
+import Service from './pages/Service'
+
 function App() {
- const dispatch = useDispatch();
- const count = useSelector((state) => state.counter.count)
+
+ const count = useAppSelector((state) => state.counter.count)
+ const dispatch = useAppDispatch();
   return (
     <>
-      <h1 onClick={()=> dispatch(increment())}>Allhumdulliah </h1>
-      <p> {count}</p>
+     <Service/>
+     
     </>
   )
 }
